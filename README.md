@@ -1,2 +1,2 @@
-# tapir-rss-profile
-TAPIR-RSS CloudLab profile
+# spanner-rss-profile
+Spanner-RSS CloudLab profile

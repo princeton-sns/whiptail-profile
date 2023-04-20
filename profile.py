@@ -1,4 +1,4 @@
-"""Setup for TAPIR for distributed transaction experiments."""
+"""Setup for Spanner-RSS for distributed transaction experiments."""
 
 import ast
 # Import the Portal object.
@@ -11,7 +11,7 @@ import geni.rspec.emulab as emulab
 # Create a portal object,
 pc = portal.Context()
 
-portal.context.defineParameter("replicas", "Number of Replicas", portal.ParameterType.STRING, "['us-east-1-0', 'us-east-1-1', 'us-east-1-2', 'eu-west-1-0', 'eu-west-1-1', 'eu-west-1-2', 'us-west-1-0', 'us-west-1-1', 'us-west-1-2']")
+portal.context.defineParameter("replicas", "Replicas", portal.ParameterType.STRING, "['us-east-1-0', 'us-east-1-1', 'us-east-1-2', 'eu-west-1-0', 'eu-west-1-1', 'eu-west-1-2', 'us-west-1-0', 'us-west-1-1', 'us-west-1-2']")
 portal.context.defineParameter("num_sites", "Number of Sites (DCs)", portal.ParameterType.INTEGER, 1)
 portal.context.defineParameter("replica_type", "Replica Hardware Type", portal.ParameterType.STRING, "m510")
 portal.context.defineParameter("replica_disk_image", "Replica Disk Image", portal.ParameterType.STRING, "urn:publicid:IDN+utah.cloudlab.us+image+morty-PG0:indicus.node.server")
