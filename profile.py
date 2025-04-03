@@ -23,7 +23,7 @@ portal.context.defineParameter("client_disk_image", "Client Disk Image", portal.
 portal.context.defineParameter("client_storage", "Client Storage Space", portal.ParameterType.STRING, "64GB")
 portal.context.defineParameter("control_machine", "Use Control Machine?", portal.ParameterType.BOOLEAN, True)
 portal.context.defineParameter("control_type", "Control Hardware Type", portal.ParameterType.STRING, "m510")
-portal.context.defineParameter("control_storage", "Control Storage Space", portal.ParameterType.String, "64GB")
+portal.context.defineParameter("control_storage", "Control Storage Space", portal.ParameterType.STRING, "64GB")
 
 params = portal.context.bindParameters()
 
