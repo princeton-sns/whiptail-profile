@@ -20,9 +20,10 @@ portal.context.defineParameter("clients_per_replica", "Number of Clients per Rep
 portal.context.defineParameter("clients_total", "Total Number of Clients", portal.ParameterType.INTEGER, 3)
 portal.context.defineParameter("client_type", "Client Hardware Type", portal.ParameterType.STRING, "m510")
 portal.context.defineParameter("client_disk_image", "Client Disk Image", portal.ParameterType.STRING, "urn:publicid:IDN+utah.cloudlab.us+image+morty-PG0:indicus.node.server")
-portal.context.defineParameter("client_storage", "Client Storage Space", portal.ParameterType.STRING, "16GB")
+portal.context.defineParameter("client_storage", "Client Storage Space", portal.ParameterType.STRING, "64GB")
 portal.context.defineParameter("control_machine", "Use Control Machine?", portal.ParameterType.BOOLEAN, True)
 portal.context.defineParameter("control_type", "Control Hardware Type", portal.ParameterType.STRING, "m510")
+portal.context.defineParameter("control_storage", "Control Storage Space", portal.ParameterType.String, "64GB")
 
 params = portal.context.bindParameters()
 
@@ -60,6 +61,9 @@ if params.control_machine:
     lan_list.append(control)
     control.hardware_type = params.control_type
     control.disk_image = params.replica_disk_image
+    control_bs = control.Blockstore("control-0", "/mnt/extra")
+    control_bs.size = params.control_storage
+    control_bs.placement = "any"
     
 lan = request.Link(members=lan_list)
 lan.best_effort = True
